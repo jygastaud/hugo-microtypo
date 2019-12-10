@@ -12,14 +12,14 @@ TOML example
 [module]
 
   [[module.imports]]
-      path="github.com/jygastaud/gohugo-microtypo/microtypo"
+      path="github.com/jygastaud/hugo-microtypo/microtypo"
       disable=false
 ```
 
 * Import the module
 
 ```
-hugo mod get github.com/jygastaud/gohugo-microtypo/microtypo
+hugo mod get github.com/jygastaud/hugo-microtypo/microtypo
 ```
 
 ## Usage

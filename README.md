@@ -2,11 +2,24 @@
 
 That project is a try to build a Hugo module by porting [Jekyll Microtypo](https://github.com/borisschapira/jekyll-microtypo)
 
+
+## Requirements
+
+Git
+Hugo > v0.58.0
+go > 1.12
+
 ## Installation
 
-* Add the module to your configuration
+1. (Optional) If your hugo site is not already a Go module, initialize it with `go mod init` and the URL of your repository at the root of your project:
 
-TOML example
+`go init github.com/username/repository`
+
+It should create a `go.mod` file.
+
+2. Add the module to your Hugo configuration file:
+
+TOML example:
 
 ```toml
 [module]
@@ -16,7 +29,15 @@ TOML example
       disable=false
 ```
 
-* Import the module
+YAML example:
+```yaml
+module:
+  imports:
+    - path: github.com/jygastaud/hugo-microtypo/microtypo
+      disable: false
+```
+
+3. Import the module
 
 ```
 hugo mod get github.com/jygastaud/hugo-microtypo/microtypo
@@ -25,7 +46,7 @@ hugo mod get github.com/jygastaud/hugo-microtypo/microtypo
 ## Usage
 
 * Replace any `{{ .Content }}` call by `{{ partial "content.html" . }}`
-* Rebuild your site
+* Rebuild your site and you're done :tada:
 
 ## Contribute
 

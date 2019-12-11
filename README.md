@@ -11,7 +11,7 @@ go >= 1.12
 
 ## Installation
 
-1. (Optional) If your hugo site is not already a Go module, initialize it with `go mod init` and the URL of your repository at the root of your project:
+1. (Optional) If your hugo site is not already a Go module, initialize it with `hugo mod init` and the URL of your repository at the root of your project:
 
 `hugo init github.com/username/repository`
 

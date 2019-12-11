@@ -45,22 +45,17 @@ hugo mod get github.com/jygastaud/hugo-microtypo/microtypo
 
 ## Usage
 
-### Simple case: You want to apply microtypo to .Content variable
-
-* Replace any `{{ .Content }}` call by `{{ partial "content.html" . }}`
+* Replace any `{{ .Content }}` call by `{{ partial "content.html" .Content }}`
 * Rebuild your site and you're done :tada:
 
-### Advanced case: You want to apply microtypo to any variable with content inside
+You can also use the content.html partial to replace any variable such as: `.Summary`...
 
-For that case, you can use the `microtypo.html` partial.
+Some examples:
 
-Let say you want to apply microtypo to the `.Summary` variable, you will have to  
-replace `{{ .Summary }}` call by `{{ partial "microtypo.html" (dict "Content" .Summary "CurrentLang" .Site.Language.Lang) }}`.
-
-To make it works for any other variable, you just have to replace `.Summary` variable in the `dict` function.
-
-`"Content"` key and `"CurrentLang" .Site.Language.Lang` must be keep.
-
+```
+{{ partial "content.html" .Content }}
+{{ partial "content.html" .Summary }}
+```
 
 ## Contribute
 

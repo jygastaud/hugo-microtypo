@@ -1,8 +1,8 @@
-{{ $currentLang := .Site.Language.Lang }}
+{{ $currentLang := site.Language.Lang }}
 
 {{ if eq $currentLang "fr" }}
 
-    {{ $content := .Content }}
+    {{ $content := . }}
 
     <!-- # Ordinals -->
     {{ $content = $content | replaceRE "(\\s)(\\d+)(e|è)(r|me)?([\\s.,])" "$1$2<sup>$3$4</sup>$5" }}
@@ -52,5 +52,5 @@
     {{ $content | safeHTML }}
 
 {{ else }}
-    {{ .Content }}
+    {{ . }}
 {{ end }}

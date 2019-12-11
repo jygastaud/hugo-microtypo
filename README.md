@@ -13,7 +13,7 @@ go >= 1.12
 
 1. (Optional) If your hugo site is not already a Go module, initialize it with `hugo mod init` and the URL of your repository at the root of your project:
 
-`hugo init github.com/username/repository`
+`hugo mod init github.com/username/repository`
 
 It should create a `go.mod` file.
 

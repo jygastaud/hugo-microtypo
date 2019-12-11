@@ -6,14 +6,14 @@ That project is a try to build a Hugo module by porting [Jekyll Microtypo](https
 ## Requirements
 
 Git
-Hugo > v0.58.0
-go > 1.12
+Hugo > v0.56.0
+go >= 1.12
 
 ## Installation
 
 1. (Optional) If your hugo site is not already a Go module, initialize it with `go mod init` and the URL of your repository at the root of your project:
 
-`go init github.com/username/repository`
+`hugo init github.com/username/repository`
 
 It should create a `go.mod` file.
 

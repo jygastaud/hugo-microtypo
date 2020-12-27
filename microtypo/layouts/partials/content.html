@@ -12,8 +12,11 @@
     {{ $content = $content | replaceRE "n°\\s*(\\d)" "n<sup>o</sup>&#8239;$1" }}
 
     <!-- # French Guillemets -->    
-    <!-- {{ $content = $content | replaceRE "(&rdquo;|”|»)&lt;a " "«&nbsp;&lt;a " }}
-    {{ $content = $content | replaceRE "(&ldquo;|“|«)(^&#8239;)(\\s|&nbsp;| )*" "«&#8239;" }} -->
+    <!-- input.gsub!(%r!(&rdquo;|”|»)<a !, "«&#8239;<a ") -->
+    <!-- input.gsub!(%r/(&ldquo;|“|«)(?!&#8239;)(\s|&nbsp;| )*/, "«&#8239;") -->
+    <!-- input.gsub!(%r/(\s|&nbsp;| )*(?!&#8239;)(&rdquo;|”|»)/, "&#8239;»") -->
+    {{ $content = $content | replaceRE "(&ldquo;|“|«)(\\s|&nbsp;| |)" "«&#8239;"}}
+    {{ $content = $content | replaceRE "(\\s|&nbsp;| |)(&rdquo;|”|»)" "&#8239;»" }}
     <!-- # ?! not existing in go. Should find an other way -->
     <!-- {{ $content = $content | replaceRE "(\\s|&nbsp;| )*(\\?\\!&nbsp;)(&rdquo;|”|»)" "&#8239;»" }} -->
 

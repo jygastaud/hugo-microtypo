@@ -1,0 +1,15 @@
+[module]
+
+  [module.hugoVersion]
+      extended = false
+      min = "0.64.0"
+      max = ""
+
+  [[module.imports]]
+      path="github.com/jygastaud/hugo-microtypo/microtypo"
+      disable=false
+
+[params]
+
+  pointMedian = true
+

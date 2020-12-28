@@ -57,6 +57,14 @@ Some examples:
 {{ partial "content.html" .Summary }}
 ```
 
+## Options
+
+A new params is available to enable/disable usage of aria-hidden when "Point Median" is used.
+Default to `false`.
+
+To change that value, add a new param `pointMedian = true` inside your config.toml.
+
+
 ## Contribute
 
 Note that we can not guarrenty any maintenance of that plugin (yet) but we will do our best.

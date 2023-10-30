@@ -50,8 +50,6 @@
     <!-- input.gsub!(%r!(—|&mdash;)(\s)!, '\1&nbsp;') -->
     {{ $content = $content | replaceRE "(—|&mdash;)(\\s?)" "$1&nbsp;" }}
 
-{{ else }}
-    {{ . }}
 {{ end }}
 
 
